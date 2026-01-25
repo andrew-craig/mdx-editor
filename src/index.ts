@@ -75,6 +75,7 @@ export * from './plugins/link-dialog'
 export * from './plugins/toolbar'
 
 export * from './plugins/diff-source'
+export * from './plugins/trackchanges'
 export * from './plugins/markdown-shortcut'
 
 export * from './plugins/search'

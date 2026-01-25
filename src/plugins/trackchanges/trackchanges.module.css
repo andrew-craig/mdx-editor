@@ -1,0 +1,13 @@
+.insertion {
+  background-color: rgba(0, 180, 0, 0.15);
+  text-decoration: underline;
+  text-decoration-color: #22c55e;
+  text-underline-offset: 2px;
+}
+
+.deletion {
+  background-color: rgba(255, 0, 0, 0.15);
+  text-decoration: line-through;
+  text-decoration-color: #ef4444;
+  color: #999;
+}
