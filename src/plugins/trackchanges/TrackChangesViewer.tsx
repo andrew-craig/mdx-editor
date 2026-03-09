@@ -46,8 +46,8 @@ function splitIntoParagraphs(text: string): string[] {
  * Returns pairs of [oldIndex, newIndex] for matching paragraphs
  * -1 indicates no match (deleted or inserted paragraph)
  */
-function matchParagraphs(oldParagraphs: string[], newParagraphs: string[]): Array<[number, number]> {
-  const result: Array<[number, number]> = []
+function matchParagraphs(oldParagraphs: string[], newParagraphs: string[]): [number, number][] {
+  const result: [number, number][] = []
 
   // Build a simple matching based on content similarity
   const usedOld = new Set<number>()
@@ -78,7 +78,7 @@ function matchParagraphs(oldParagraphs: string[], newParagraphs: string[]): Arra
       // Simple similarity: shared words ratio
       const oldWords = new Set(oldParagraphs[j].toLowerCase().split(/\s+/))
       const newWords = newParagraphs[i].toLowerCase().split(/\s+/)
-      const sharedCount = newWords.filter(w => oldWords.has(w)).length
+      const sharedCount = newWords.filter((w) => oldWords.has(w)).length
       const score = sharedCount / Math.max(oldWords.size, newWords.length)
 
       if (score > 0.3 && score > bestScore) {
@@ -155,13 +155,7 @@ export const TrackChangesViewer: React.FC = () => {
         }
 
         // Modified or unchanged paragraph
-        return (
-          <DiffParagraph
-            key={`match-${index}`}
-            oldText={oldParagraphs[oldIdx]}
-            newText={newParagraphs[newIdx]}
-          />
-        )
+        return <DiffParagraph key={`match-${index}`} oldText={oldParagraphs[oldIdx]} newText={newParagraphs[newIdx]} />
       })}
     </div>
   )

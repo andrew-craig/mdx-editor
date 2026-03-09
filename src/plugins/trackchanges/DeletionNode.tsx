@@ -1,13 +1,5 @@
-import { JSX } from 'react'
-import {
-  DecoratorNode,
-  EditorConfig,
-  LexicalEditor,
-  LexicalNode,
-  NodeKey,
-  SerializedLexicalNode,
-  Spread
-} from 'lexical'
+import React, { JSX } from 'react'
+import { DecoratorNode, EditorConfig, LexicalEditor, LexicalNode, NodeKey, SerializedLexicalNode, Spread } from 'lexical'
 import styles from './trackchanges.module.css'
 
 /**
@@ -57,7 +49,7 @@ export class DeletionNode extends DecoratorNode<JSX.Element> {
 
   createDOM(config: EditorConfig): HTMLElement {
     const span = document.createElement('span')
-    const className = config.theme.trackChangeDeletion
+    const className = config.theme.trackChangeDeletion as string | undefined
     if (className) {
       span.className = className
     }

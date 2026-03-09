@@ -13,9 +13,7 @@ export const TrackChangesWrapper: React.FC<{ children: React.ReactNode }> = ({ c
   return (
     <div className="mdxeditor-track-changes-wrapper">
       {/* Normal editor - hidden when track changes is enabled */}
-      <div style={{ display: enabled ? 'none' : 'block' }}>
-        {children}
-      </div>
+      <div style={{ display: enabled ? 'none' : 'block' }}>{children}</div>
 
       {/* Track changes view - shown when enabled */}
       {enabled && <TrackChangesViewer />}

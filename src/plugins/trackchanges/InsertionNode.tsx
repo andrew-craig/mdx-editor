@@ -1,13 +1,5 @@
-import { JSX } from 'react'
-import {
-  DecoratorNode,
-  EditorConfig,
-  LexicalEditor,
-  LexicalNode,
-  NodeKey,
-  SerializedLexicalNode,
-  Spread
-} from 'lexical'
+import React, { JSX } from 'react'
+import { DecoratorNode, EditorConfig, LexicalEditor, LexicalNode, NodeKey, SerializedLexicalNode, Spread } from 'lexical'
 import styles from './trackchanges.module.css'
 
 /**
@@ -56,7 +48,7 @@ export class InsertionNode extends DecoratorNode<JSX.Element> {
 
   createDOM(config: EditorConfig): HTMLElement {
     const span = document.createElement('span')
-    const className = config.theme.trackChangeInsertion
+    const className = config.theme.trackChangeInsertion as string | undefined
     if (className) {
       span.className = className
     }

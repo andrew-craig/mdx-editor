@@ -57,7 +57,9 @@ export function ToggleableTrackChanges() {
     <div className="App">
       <div style={{ marginBottom: '1rem' }}>
         <button
-          onClick={() => setEnabled(!enabled)}
+          onClick={() => {
+            setEnabled(!enabled)
+          }}
           style={{
             padding: '0.5rem 1rem',
             backgroundColor: enabled ? '#22c55e' : '#e5e7eb',
@@ -175,7 +177,9 @@ export function EditableWithTrackChangesToggle() {
     <div className="App">
       <div style={{ marginBottom: '1rem', display: 'flex', gap: '0.5rem' }}>
         <button
-          onClick={() => setEnabled(!enabled)}
+          onClick={() => {
+            setEnabled(!enabled)
+          }}
           style={{
             padding: '0.5rem 1rem',
             backgroundColor: enabled ? '#22c55e' : '#e5e7eb',
@@ -193,7 +197,9 @@ export function EditableWithTrackChangesToggle() {
       <MDXEditor
         ref={ref}
         markdown={markdown}
-        onChange={(md) => setMarkdown(md)}
+        onChange={(md) => {
+          setMarkdown(md)
+        }}
         plugins={[
           headingsPlugin(),
           listsPlugin(),
